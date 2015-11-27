@@ -1,1 +1,5 @@
 :locale: "ru-RU"
+
+# Enable/disable first/last name validations on Leads and Contacts
+#------------------------------------------------------------------------------
+:require_last_names:  false
