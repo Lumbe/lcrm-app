@@ -62,5 +62,13 @@ if defined?(FatFreeCRM::Application)
 
     # Do not dump schema after migrations.
     config.active_record.dump_schema_after_migration = false
+
+    #config/environments/production.rb
+    config.middleware.use ExceptionNotification::Rack,
+                          :email => {
+                              :email_prefix => "Subject",
+                              :sender_address => %{"notifier" <error@email.com>},
+                              :exception_recipients => %w{just.me.sober@gmail.com}
+                          }
   end
 end
